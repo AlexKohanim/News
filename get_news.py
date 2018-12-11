@@ -5,7 +5,8 @@ import sys
 
 base_url = "https://newsapi.org/v2/"
 api_key = ""
-with open(".api_key", 'r') as api_file:
+file_location = "/home/alex/Documents/News/.api_key"
+with open(file_location, 'r') as api_file:
     api_key = api_file.readline()
 arguments = len(sys.argv)
 
