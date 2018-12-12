@@ -2,12 +2,13 @@
 import json
 import requests
 import sys
+import os.path
 
 base_url = "https://newsapi.org/v2/"
 api_key = ""
-file_location = "/home/alex/Documents/News/.api_key"
+file_location = "/home/alex/Documents/News/.api_key" if os.path.exists("/home/alex/Documents/News/.api_key") else  ".api_key"
 with open(file_location, 'r') as api_file:
-    api_key = api_file.readline()
+    api_key = api_file.readline().strip()
 arguments = len(sys.argv)
 
 sort_type = "top-headlines" if arguments < 2 or sys.argv[1] == "top" else "everything"
