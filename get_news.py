@@ -14,7 +14,7 @@ try:
         api_key = api_file.readline().strip()
 except FileNotFoundError:
     print("API key file not found, let's make it together")
-    api_key = prompt("Please paste your key here: ")
+    api_key = input("Please paste your key here: ")
     with open(file_location, "w") as newApiFile:
         newApiFile.write(api_key + "\n")
     print("API File created successfully at:", file_location)
