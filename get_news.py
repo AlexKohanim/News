@@ -9,10 +9,17 @@ import os.path
 base_url = "https://newsapi.org/v2/"
 api_key = ""
 file_location = "/home/alex/Documents/News/.api_key" if os.path.exists("/home/alex/Documents/News/.api_key") else  ".api_key"
-with open(file_location, 'r') as api_file:
-    api_key = api_file.readline().strip()
+try:
+    with open(file_location, 'r') as api_file:
+        api_key = api_file.readline().strip()
+except FileNotFoundError:
+    print("API key file not found, let's make it together")
+    api_key = prompt("Please paste your key here: ")
+    with open(file_location, "w") as newApiFile:
+        newApiFile.write(api_key + "\n")
+    print("API File created successfully at:", file_location)
+        
 arguments = len(sys.argv)
-
 sort_type = "top-headlines" if arguments < 2 or sys.argv[1] == "top" else "everything"
 source = 'hacker-news' if arguments < 3 else sys.argv[2]
 
