@@ -34,7 +34,7 @@ for article in json_data['articles']:
     try:
         pDate = article['publishedAt']
         content = article['content']
-        url = article['url'] 
+        url = article['url']
         print(colors.CRED + pDate, "\n" + colors.CGREEN2 + content, "\nRead More at:", colors.CBLUE2 +  url, end="\n\n")
     except TypeError as err:
         pass

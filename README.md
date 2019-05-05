@@ -24,7 +24,12 @@ To use this script:
 
 	apiKey=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
-	the rest of the lines don't really matter, but I wouldn't add more "
+	the rest of the lines don't really matter, but I wouldn't add more
+
+	Also, make sure to install request and requests
+
+	$ sudo -H pip3 install request
+	$ sudo -H pip3 install requests
 
 3. use default config ("hacker-news, top")
 
