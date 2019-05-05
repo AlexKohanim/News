@@ -16,7 +16,7 @@ except FileNotFoundError:
     print("API key file not found, let's make it together")
     api_key = input("Please paste your key here: ")
     with open(file_location, "w") as newApiFile:
-        newApiFile.write(api_key + "\n")
+        newApiFile.write("apiKey="+api_key + "\n")
     print("API File created successfully at:", file_location)
         
 arguments = len(sys.argv)
